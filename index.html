@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <p class="eyebrow">REKAP TUGAS HARIAN</p>
+        <h1>To-do List</h1>
+        <p>Atur tugas harianmu dengan lebih mudah.</p>
+    </div>
+    
+    <div class="profile-section">
+        <div class="profile-avatar">A</div>
+        <div class="profile-info">
+            <h2 id="profileName">Agus Faisal</h2>
+            <p id="profilePosition">Fullstack Web Developer</p>
+            <div class="date-time" id="date-time"></div>
+        </div>
+    </div>
+    <section class="section-1">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">DAFTAR TUGAS</p>
+                <h2>Tugas hari ini</h2>
+            </div>
+        </div>
+        <form onsubmit="onFormSubmit(event)">
+            <input type="text" placeholder="Contoh: Selesaikan desain halaman" aria-label="Tugas baru">
+            <select class="priority-select" id="prioritySelect" aria-label="Prioritas tugas">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            </select>
+            <button type="submit">Submit tugas</button>
+        </form>
+        <div id="list">
+            <section class="task-column" aria-labelledby="todoHeading">
+                <h3 id="todoHeading">To-Do</h3>
+                <div id="todoList" class="task-list"></div>
+                <button type="button" class="delete-all" onclick="clearTasks('todoList')">Hapus semua</button>
+            </section>
+            <section class="task-column done-column" aria-labelledby="doneHeading">
+                <h3 id="doneHeading">Done</h3>
+                <div id="doneList" class="task-list"></div>
+                <button type="button" class="delete-all" onclick="clearTasks('doneList')">Hapus semua</button>
+            </section>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
